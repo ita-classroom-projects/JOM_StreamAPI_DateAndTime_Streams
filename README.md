@@ -7,12 +7,12 @@ that write the text to file as sequence of bytes in binary format.
 ---
 For example, the text fragment
 
----
+
 >        Hello!
 should be represented in the file as a sequence of 7-bit bytes 
 without spaces between them:
 
----
+
 >        100100011001011101100110110011011110100001
 
 ---
