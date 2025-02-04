@@ -62,7 +62,7 @@ public class Task4Test {
         Path fileName = Path.of(filename);
         try {
             Files.writeString(fileName, content);
-            assertEquals(MyUtils.readFile(filename), expectedResult);
+            assertEquals(expectedResult, MyUtils.readFile(filename));
         } catch (IOException e) {
             fail("File have not created " + e);
         }
