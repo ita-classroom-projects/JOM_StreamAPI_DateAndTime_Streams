@@ -18,8 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Task4Test {
 
     final private static String PACKAGE = "jom.com.softserve.s6.task4.";
-/*
-    @DisplayName("Check that Classes is present")
+/*    @DisplayName("Check that Classes is present")
     @ParameterizedTest
     @MethodSource("listOfClasses")
     void isTypePresent(String cl) {
@@ -59,10 +58,10 @@ public class Task4Test {
     @DisplayName("Check that method readFile reed correct data from file")
     @ParameterizedTest
     @MethodSource("getDataFromFile")
-    void isDataCorrect(String filename, String expectedResult) {
+    void isDataCorrect(String filename, String expectedResult, String content) {
         Path fileName = Path.of(filename);
         try {
-            String s = Files.readString(fileName);
+            Files.writeString(fileName, content);
             assertEquals(MyUtils.readFile(filename), expectedResult);
         } catch (IOException e) {
             fail("File have not created " + e);
@@ -70,9 +69,17 @@ public class Task4Test {
     }
 
     private static Stream<Arguments> getDataFromFile() {
-        return Stream.of(Arguments.of("data1.txt", "Example of text for test case #1"),
-                Arguments.of("data2.txt", "Example of text\nfor test case #2"),
-                Arguments.of("data3.txt", "Example of\ntext for\ntest case #3"));
-    }
-    */
+        return Stream.of(Arguments.of("data1.txt", "Example of text for test case #1",
+                        "100010111110001100001110110111100001101100110010101000001101111110011001000001110100110010" +
+                        "11111000111010001000001100110110111111100100100000111010011001011110011111010001" +
+                        "000001100011110000111100111100101010000001000110110001"),
+                Arguments.of("data2.txt", "Example of text\nfor test case #2",
+                        "100010111110001100001110110111100001101100110010101000001101111110011001" +
+                        "00000111010011001011111000111010000010101100110110111111100100100000111010011001011110011111" +
+                        "010001000001100011110000111100111100101010000001000110110010"),
+                Arguments.of("data3.txt", "Example of\ntext for\ntest case #3",
+                        "1000101111100011000011101101111000011011001100101010000011011111100110000" +
+                        "1010111010011001011111000111010001000001100110110111111100100001010111010011001011110011111" +
+                        "010001000001100011110000111100111100101010000001000110110011"));
+    }*/
 }
