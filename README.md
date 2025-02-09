@@ -2,16 +2,17 @@
 
 ---
 Create a `Map<String, Stream<String>> phoneNumbers(List<Stream<String>> list)` method 
-of the `MyUtils` class to build a `Map` of all phone numbers.
+in the `MyUtils` class to build a `Map` of all phone numbers.
 
 ---
-The key of `Map` is code of network and value contains sorted list of phones.
+The key of the Map is the network prefix and the value streams a sorted list of the phones in this network. All numbers that consists of 10 digits should be categorized by their prefix codes. All numbers that contain exactly 7 digits should be categorized by key "loc". All others should go under the key "err".
 
 ---
-Remove all spaces, brackets and dashes from phone numbers.
+Nulls and empty strings should be ignored.
+Remove all spaces, brackets, dashes, etc from the phone numbers.
 
 ---
-For example, for a given
+For example, for the given input data:
 ```JSON
 [
   ["093 987 65 43", "(050)1234567", "12-345"], 
